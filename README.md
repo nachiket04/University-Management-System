@@ -1,1 +1,49 @@
-# University-Management-System
+# University-Management-System 
+
+University Management System only admin can able to access this system and you are able to add more admin.In This University Management system you can add students data, teachers data, view data, update data, use calculator and notepad. 
+
+1. Landing Page : as soon as you run it a page with university photo and name will be appear on the screen with some animation and it will be showed for 4 seconds 
+
+![image](https://user-images.githubusercontent.com/109031731/185763156-ed68fd32-331b-45ba-9f20-1fe79d5caec6.png)
+
+Login Page : If uername and password matches from the database then only new screen will be opened else "Invalid Username or password" will be shown.
+
+![image](https://user-images.githubusercontent.com/109031731/185762215-97fa1eac-7dfb-4317-ac6b-507bd50a7157.png)
+
+After Successfull Login ->
+1. First Option is 'add new Faculty Details' with textFields, comboboxes and a submit button is there.
+
+![image](https://user-images.githubusercontent.com/109031731/185762491-a0a2ee19-4c66-444e-9460-69d60c0f1f6f.png)
+
+2. Second option is 'add new student details
+
+![image](https://user-images.githubusercontent.com/109031731/185762531-8afdb4d2-8ed5-4613-8898-82fe7160f036.png)
+
+3. The next option is 'View faculty details'.
+   where 1. You can directly see all the faculty details from the database
+         2. Or you can just search particular teacher details by their employee id 
+         3. Also you can print all faculty details or a particular faculty details
+         4. And after adding new faculty details to refresh the page there is a refresh button also.
+
+![image](https://user-images.githubusercontent.com/109031731/185762664-1c8e509d-bf3f-45bb-b8c5-834e257b6009.png)
+
+4. and Same for 'View student details' 
+
+![image](https://user-images.githubusercontent.com/109031731/185762719-f5709e45-b3e3-4009-94d5-41fc0cb96e9e.png)
+
+5. Next option is 'update faculty details' -> where you can choose the faculty by their id and update details of the faculty. And same for update student details
+
+![image](https://user-images.githubusercontent.com/109031731/185762819-e3a75625-2792-4984-a651-859dc31b1c88.png)
+
+6. Then there is a fee structure option where fees of all 8 semesters for two courses is present. you can edit fees of particular semister later in future also.
+
+![image](https://user-images.githubusercontent.com/109031731/185762891-b87525e6-375f-4f70-ad26-49d77037b9ba.png)
+
+Also quick calculator and notepad options are also available on window
+
+![image](https://user-images.githubusercontent.com/109031731/185762935-ae77e6b4-fcb3-4697-b6ae-4909f5194c8f.png)
+
+![image](https://user-images.githubusercontent.com/109031731/185762957-8cdf2aee-5e23-4ce3-b17b-51309947708c.png)
+
+Then if you click logout button that window will be closed with a pop "you have been logged out successfully" and login window will be showed again
+
