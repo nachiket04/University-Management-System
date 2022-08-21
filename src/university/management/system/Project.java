@@ -9,26 +9,27 @@ import java.awt.*;
 
 public class Project extends JFrame {
 
-    Choice choice1, choice2, choice3, choice4;
+    Choice choice1, choice2, choice3, choice4, choice5, choice6;
     JButton jButton1, jButton10, jButton11, jButton12, jButton13, jButton14, jButton15, jButton16, jButton17;
     JButton jButton18, jButton19, jButton2, jButton20, jButton21, jButton3, jButton4, jButton5, jButton6;
-    JButton jButton7, jButton8, jButton9;
-    JComboBox<String> jComboBox1, jComboBox11, jComboBox12, jComboBox2, jComboBox3, jComboBox4, jComboBox7, jComboBox8, jComboBox9;
+    JButton jButton7, jButton8, jButton9, jButton22, jButton23, jButton24, jButton25, jButton26;
+    JComboBox<String> jComboBox1, jComboBox11, jComboBox12, jComboBox2, jComboBox3, jComboBox4, jComboBox7, jComboBox8, jComboBox9,jComboBox5, jComboBox6;
     JLabel jLabel1, jLabel10, jLabel11, jLabel12, jLabel13, jLabel14, jLabel15, jLabel16, jLabel17, jLabel18;
     JLabel jLabel19, jLabel2, jLabel20, jLabel21, jLabel22, jLabel23, jLabel24, jLabel27, jLabel28, jLabel29;
     JLabel jLabel3, jLabel30, jLabel31, jLabel32, jLabel33, jLabel34, jLabel35, jLabel36, jLabel37;
     JLabel jLabel38, jLabel39, jLabel4, jLabel40, jLabel41, jLabel42, jLabel43,jLabel44, jLabel45, jLabel46;
     JLabel jLabel47, jLabel48, jLabel49, jLabel5, jLabel50, jLabel51, jLabel52, jLabel53, jLabel54, jLabel55;
     JLabel jLabel56, jLabel57, jLabel58, jLabel59, jLabel6, jLabel60, jLabel61, jLabel62,jLabel63,jLabel64;
+    JLabel jLabel25, jLabel26, jLabel75, jLabel76, jLabel74, jLabel73;
     JLabel jLabel65, jLabel66, jLabel67, jLabel68, jLabel69, jLabel7, jLabel70, jLabel71, jLabel72, jLabel8, jLabel9;
-    JPanel jPanel1, jPanel10, jPanel11, jPanel2, jPanel3, jPanel4, jPanel5, jPanel6, jPanel7, jPanel8, jPanel9;
-    JScrollPane jScrollPane1, jScrollPane2, jScrollPane3, jScrollPane4;
+    JPanel jPanel1, jPanel10, jPanel11, jPanel2, jPanel3, jPanel4, jPanel5, jPanel6, jPanel7, jPanel8, jPanel9, jPanel12;
+    JScrollPane jScrollPane1, jScrollPane2, jScrollPane3, jScrollPane4, jScrollPane5;
     JTabbedPane jTabbedPane1;
-    JTable jTable1, jTable2, jTable3, jTable4;
+    JTable jTable1, jTable2, jTable3, jTable4, jTable5;
     JTextField jTextField10,jTextField11,jTextField12,jTextField13,jTextField14,jTextField15,jTextField16,jTextField17;
     JTextField jTextField18,jTextField19,jTextField2,jTextField20,jTextField21,jTextField22,jTextField23,jTextField24;
     JTextField jTextField28, jTextField29, jTextField3, jTextField4, jTextField5, jTextField6, jTextField7;
-    JTextField jTextField8, jTextField9, jTextField25;
+    JTextField jTextField8, jTextField9, jTextField25, jTextField26;
     
     Project() {
         jLabel23 = new JLabel();
@@ -181,7 +182,25 @@ public class Project extends JFrame {
         jTable4 = new JTable();
         jLabel69 = new JLabel();
         jLabel70 = new JLabel();
-        
+        jPanel12 = new JPanel();
+        jLabel73 = new JLabel();
+        jLabel74 = new JLabel();
+        choice5 = new Choice();
+        jScrollPane5 = new JScrollPane();
+        jTable5 = new JTable();
+        jButton22 = new JButton();
+        jButton23 = new JButton();
+        jButton24 = new JButton();
+        jButton26 = new JButton();
+        jLabel25 = new JLabel();
+        jLabel26 = new JLabel();
+        jComboBox5 = new JComboBox<>();
+        jLabel75 = new JLabel();
+        jComboBox6 = new JComboBox<>();
+        jButton25 = new JButton();
+        choice6 = new Choice();
+        jLabel76 = new JLabel();
+        jTextField26 = new JTextField();
         
         // faculty tab
         // for id 
@@ -197,34 +216,40 @@ public class Project extends JFrame {
             }catch(Exception e){
                 e.getStackTrace();
             }
+            
             // student tab
             // for id 
             try{
-                Conn c2 = new Conn();
-                ResultSet rs2 = c2.s.executeQuery("select * from studentinfo");
+                Conn c = new Conn();
+                ResultSet rs3 = c.s.executeQuery("select * from studentinfo");
                 
-                while(rs2.next()){
-                    choice2.add(rs2.getString("rollno"));
+                while(rs3.next()){
+                    choice2.add(rs3.getString("rollno"));
+                    choice4.add(rs3.getString("rollno"));
+                    choice5.add(rs3.getString("rollno"));
+                    choice6.add(rs3.getString("rollno"));
                 }
             }catch(Exception e){
                 e.getStackTrace();
             }
+            
+            
             // for teacher update info
             try{
-                Conn c4 = new Conn();
-                ResultSet rs4 = c4.s.executeQuery("Select * from teacherinfo where id = '"+choice3.getSelectedItem()+"'");
+                Conn c = new Conn();
+                ResultSet rs5 = c.s.executeQuery("Select * from teacherinfo where id = '"+choice3.getSelectedItem()+"'");
                 
-                while(rs4.next()){
-                    jLabel49.setText(rs4.getString("name"));
-                    jLabel50.setText(rs4.getString("fname"));
-                    jLabel51.setText(rs4.getString("id"));
-                    jLabel52.setText(rs4.getString("dob"));
-                    jLabel53.setText(rs4.getString("aadhar"));
-                    jLabel54.setText(rs4.getString("cast"));
-                    jTextField21.setText(rs4.getString("subject"));
-                    jTextField22.setText(rs4.getString("email"));
-                    jTextField23.setText(rs4.getString("phone"));
-                    jTextField28.setText(rs4.getString("address"));
+                while(rs5.next()){
+                    jLabel49.setText(rs5.getString("name"));
+                    jLabel50.setText(rs5.getString("fname"));
+                    jLabel51.setText(rs5.getString("id"));
+                    jLabel52.setText(rs5.getString("dob"));
+                    jLabel53.setText(rs5.getString("aadhar"));
+                    jLabel54.setText(rs5.getString("cast"));
+                    jTextField21.setText(rs5.getString("subject"));
+                    jTextField22.setText(rs5.getString("email"));
+                    jTextField23.setText(rs5.getString("phone"));
+                    jTextField28.setText(rs5.getString("address"));
                 }
             }catch(Exception e){
                 e.getStackTrace();
@@ -232,21 +257,24 @@ public class Project extends JFrame {
             
             // for student update info
             try{
-                Conn c5 = new Conn();
-                ResultSet rs5 = c5.s.executeQuery("Select * from studentinfo where rollno = '"+choice4.getSelectedItem()+"'");
+                Conn c = new Conn();
+                ResultSet rs6 = c.s.executeQuery("Select * from studentinfo where rollno = '"+choice4.getSelectedItem()+"'");
                 
-                while(rs5.next()){
-                    jLabel58.setText(rs5.getString("name"));
-                    jLabel60.setText(rs5.getString("fname"));
-                    jLabel62.setText(rs5.getString("rollno"));
-                    jLabel64.setText(rs5.getString("dob"));
-                    jTextField24.setText(rs5.getString("phone"));
-                    jTextField29.setText(rs5.getString("email"));
-                    jTextField25.setText(rs5.getString("address"));
+                while(rs6.next()){
+                    jLabel58.setText(rs6.getString("name"));
+                    jLabel60.setText(rs6.getString("fname"));
+                    jLabel62.setText(rs6.getString("rollno"));
+                    jLabel64.setText(rs6.getString("dob"));
+                    jTextField24.setText(rs6.getString("phone"));
+                    jTextField29.setText(rs6.getString("address"));
+                    jTextField25.setText(rs6.getString("email"));
                 }
             }catch(Exception e){
                 e.getStackTrace();
             }
+            
+            
+        
         
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel23.setText("Course");
@@ -316,7 +344,6 @@ public class Project extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
-
         });
 
         jButton5.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
@@ -415,6 +442,14 @@ public class Project extends JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        jButton26.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
+        jButton26.setText("Fees Records");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -435,7 +470,8 @@ public class Project extends JFrame {
                     .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel68)
-                        .addGap(11, 11, 11)))
+                        .addGap(11, 11, 11))
+                    .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -457,6 +493,8 @@ public class Project extends JFrame {
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -465,7 +503,7 @@ public class Project extends JFrame {
                 .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel68)
                 .addGap(31, 31, 31))
         );
@@ -858,14 +896,6 @@ public class Project extends JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        try{
-                Conn c1 = new Conn();
-                ResultSet rs1 = c1.s.executeQuery("select * from teacherinfo");
-                jTable1.setModel(DbUtils.resultSetToTableModel(rs1));
-                
-            }catch(Exception e){
-                e.getStackTrace();
-            }
         jScrollPane1.setViewportView(jTable1);
 
         jButton11.setText("Search");
@@ -979,18 +1009,6 @@ public class Project extends JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        
-        //
-        try{
-                Conn c3 = new Conn();
-                ResultSet rs3 = c3.s.executeQuery("select * from studentinfo");
-                jTable2.setModel(DbUtils.resultSetToTableModel(rs3));
-                
-            }catch(Exception e){
-                e.getStackTrace();
-            }
-        //
-        
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -1513,7 +1531,217 @@ public class Project extends JFrame {
 
         jTabbedPane1.addTab("tab7", jPanel7);
 
+        jLabel73.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jLabel73.setText("Search by Roll No ");
+
+        jLabel74.setFont(new java.awt.Font("Baskerville Old Face", 1, 36)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel74.setText("Student Fee Records");
+
+        choice5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                choice5MouseClicked(evt);
+            }
+        });
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable5);
+
+        jButton22.setText("Search");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+
+        jButton23.setText("Print");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        jButton24.setText("Refresh");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel25.setText("Roll No");
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel26.setText("Mode ");
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "NEFT", "UPI" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+
+        jLabel75.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel75.setText("Semester");
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semester I", "Semester II", "Semester III", "Semester IV", "Semester V", "Semester VI", "Semester VII", "Semester VIII" }));
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
+
+        jButton25.setBackground(new java.awt.Color(0, 102, 102));
+        jButton25.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 18)); // NOI18N
+        jButton25.setForeground(new java.awt.Color(255, 255, 255));
+        jButton25.setText("Submit");
+        jButton25.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        choice6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                choice6MouseClicked(evt);
+            }
+        });
+
+        jLabel76.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel76.setText("Fees Paid");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(jButton22)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton23)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton24))
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(jLabel73)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(choice6, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel74)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(choice5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(87, 87, 87)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel75)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel76)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField26)))
+                                .addGap(53, 53, 53)
+                                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 179, Short.MAX_VALUE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5)))
+                .addContainerGap())
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel74)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(choice5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel75)
+                                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel26)
+                                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel76)
+                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(29, 29, 29))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(choice6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel73, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton22)
+                    .addComponent(jButton23)
+                    .addComponent(jButton24))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel12);
+
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, -40, 920, 650));
+        
+        
+            // for inserting in table
+            try{
+                Conn c = new Conn();
+                ResultSet rs2 = c.s.executeQuery("select * from teacherinfo");
+                jTable1.setModel(DbUtils.resultSetToTableModel(rs2));
+                
+            }catch(Exception e){
+                e.getStackTrace();
+            }
+            
+            // for inserting in table
+            try{
+                Conn c = new Conn();
+                ResultSet rs4 = c.s.executeQuery("select * from studentinfo");
+                jTable2.setModel(DbUtils.resultSetToTableModel(rs4));
+                
+            }catch(Exception e){
+                e.getStackTrace();
+            }
+            
+            try{
+                Conn c = new Conn();
+                ResultSet rs5 = c.s.executeQuery("select * from feesreport");
+                jTable5.setModel(DbUtils.resultSetToTableModel(rs5));
+                
+            }catch(Exception e){
+                e.getStackTrace();
+            }
 
         pack();
         
@@ -1836,7 +2064,68 @@ public class Project extends JFrame {
     public void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(6);
-    }                                           
+    }    
+    public void choice5MouseClicked(java.awt.event.MouseEvent evt) {                                     
+        // TODO add your handling code here:
+    }                                    
+
+    public void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        try{
+            Conn c = new Conn();
+            ResultSet rs = c.s.executeQuery("Select * from feesreport where rollno = '"+choice6.getSelectedItem()+"'");
+            jTable5.setModel(DbUtils.resultSetToTableModel(rs));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }                                         
+
+    public void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    public void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        setVisible(false);
+        new Project();
+    }                                         
+
+    public void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    public void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    public void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+            String rollno = choice5.getSelectedItem();
+            String semester = (String)jComboBox6.getSelectedItem();
+            String mode = (String)jComboBox5.getSelectedItem();
+            String amount = jTextField26.getText();
+            String query = "insert into feesreport values('"+rollno+"', '"+semester+"', '"+mode+"', '"+amount+"')";
+            try{
+                Conn con = new Conn();
+                con.s.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, """
+                                                    Fees added successfully 
+                                                    Please refresh the page""");
+            }catch(Exception e){
+                e.getStackTrace();
+            }
+    }                                         
+
+    public void choice6MouseClicked(java.awt.event.MouseEvent evt) {                                     
+        // TODO add your handling code here:
+    }                                    
+
+    public void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(7);
+    } 
+    
     public static void main(String args[]) {
         new Project();
     }
