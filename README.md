@@ -1,6 +1,6 @@
 # University-Management-System 
 
-University Management System only admin can able to access this system and you are able to add more admin.In This University Management system you can add students data, teachers data, view data, update data, use calculator and notepad. 
+University Management System only admin can able to access this system and you are able to add more admin.In This University Management system you can add students data, teachers data, view data, update data, view fees structures, add and view fees records, use calculator and notepad. 
 
 1. Landing Page : as soon as you run it a page with university photo and name will be appear on the screen with some animation and it will be showed for 4 seconds 
 
@@ -13,11 +13,11 @@ Login Page : If uername and password matches from the database then only new scr
 After Successfull Login ->
 1. First Option is 'add new Faculty Details' with textFields, comboboxes and a submit button is there.
 
-![image](https://user-images.githubusercontent.com/109031731/185762491-a0a2ee19-4c66-444e-9460-69d60c0f1f6f.png)
+![image](https://user-images.githubusercontent.com/109031731/185784431-08a9f4bc-02f0-4d38-aecd-b5b913bfa349.png)
 
 2. Second option is 'add new student details
 
-![image](https://user-images.githubusercontent.com/109031731/185762531-8afdb4d2-8ed5-4613-8898-82fe7160f036.png)
+![image](https://user-images.githubusercontent.com/109031731/185784455-8cbb00e1-a4b4-45bc-a5c1-07f0bffb66a9.png)
 
 3. The next option is 'View faculty details'.
    where 1. You can directly see all the faculty details from the database
@@ -38,6 +38,10 @@ After Successfull Login ->
 6. Then there is a fee structure option where fees of all 8 semesters for two courses is present. you can edit fees of particular semister later in future also.
 
 ![image](https://user-images.githubusercontent.com/109031731/185762891-b87525e6-375f-4f70-ad26-49d77037b9ba.png)
+
+7. Next option is Fees records where you can add the fees paid by student and mentain record of fees. Also you can select a roll no and check its all entries. And you can also print the all fees details of a particular student. 
+
+![image](https://user-images.githubusercontent.com/109031731/185784561-b9cdb652-ada2-4701-964c-39085f826c5a.png)
 
 Also quick calculator and notepad options are also available on window
 
