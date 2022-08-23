@@ -25,15 +25,20 @@ After Successfull Login ->
          3. Also you can print all faculty details or a particular faculty details
          4. And after adding new faculty details to refresh the page there is a refresh button also.
 
-![image](https://user-images.githubusercontent.com/109031731/185762664-1c8e509d-bf3f-45bb-b8c5-834e257b6009.png)
+![image](https://user-images.githubusercontent.com/109031731/186169444-f3b8899f-84ae-4dd3-a31e-170c5832ac50.png)
 
 4. and Same for 'View student details' 
 
 ![image](https://user-images.githubusercontent.com/109031731/185762719-f5709e45-b3e3-4009-94d5-41fc0cb96e9e.png)
 
-5. Next option is 'update faculty details' -> where you can choose the faculty by their id and update details of the faculty. And same for update student details
+5. Next option is 'update faculty details' -> where you can choose the faculty by their id and update details of the faculty.
 
 ![image](https://user-images.githubusercontent.com/109031731/185762819-e3a75625-2792-4984-a651-859dc31b1c88.png)
+
+ And same for update student details
+
+![image](https://user-images.githubusercontent.com/109031731/186168524-3a407a43-398c-45e8-a229-5bee55ada69d.png)
+
 
 6. Then there is a fee structure option where fees of all 8 semesters for two courses is present. you can edit fees of particular semister later in future also.
 
@@ -51,3 +56,4 @@ Also quick calculator and notepad options are also available on window
 
 Then if you click logout button that window will be closed with a pop "you have been logged out successfully" and login window will be showed again
 
+![image](https://user-images.githubusercontent.com/109031731/186167818-7a7aa71e-d599-466b-922b-79c6c9035a06.png)
