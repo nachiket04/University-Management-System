@@ -11,6 +11,11 @@ Login Page : If uername and password matches from the database then only new scr
 ![image](https://user-images.githubusercontent.com/109031731/185762215-97fa1eac-7dfb-4317-ac6b-507bd50a7157.png)
 
 After Successfull Login ->
+
+Home Page 
+
+![image](https://user-images.githubusercontent.com/109031731/190605462-c759371b-2579-461b-9833-bb449752a2aa.png)
+
 1. First Option is 'add new Faculty Details' with textFields, comboboxes and a submit button is there.
 
 ![image](https://user-images.githubusercontent.com/109031731/185784431-08a9f4bc-02f0-4d38-aecd-b5b913bfa349.png)
