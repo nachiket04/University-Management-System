@@ -2,6 +2,8 @@
 
 University Management System only admin can able to access this system and you are able to add more admins. In This University Management system you can add students data, teachers data, view data, update data, view fees structures, add and view fees records, use calculator and notepad. 
 
+Technology Used :- Java Swing, OOP, MySQL
+
 1. Landing Page : as soon as you run it a page with university photo and name will be appear on the screen with some animation and it will be showed for 4 seconds 
 
 ![image](https://user-images.githubusercontent.com/109031731/185763156-ed68fd32-331b-45ba-9f20-1fe79d5caec6.png)
